@@ -9,8 +9,11 @@
     --body-color: hsl(206, 4%, 97%);
     --text-color: hsl(0, 0%, 20%);
     --title-color: hsl(0, 0%, 10%);
-    --bg-color: hsl(0, 0%, 100%);
+    --bg-color: rgba(32, 32, 32, 0.9);
+    --bg-btn-color:#797171;
     --card-color: hsl(0, 0%, 90%);
+    --bg-gradiente:#272b55;
+    --text-color-white:white;
   
     /* Font and typography */
     --body-font: 'Open Sans', sans-serif;
@@ -57,6 +60,7 @@
     line-height: 1.5;
     scroll-behavior: smooth;
     box-sizing: border-box;
+    
   }
   
   html,
@@ -416,7 +420,7 @@
     right: var(--sp-1-5);
     width: 45px;
     height: 45px;
-    background-color: var(--bg-color);
+    background-color: var(--bg-btn-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     transform: translateY(-50%);
@@ -643,14 +647,14 @@
     font-size: 14px;
     padding: 5px 10px;
     outline:none;
-    color: white;
     font-size: .8em;
     text-align: center;
+    color: var(--text-color-white);
   }
   .btn--buy {
     grid-column: span 4;
     background-color: var(--title-color);
-    color: var(--bg-color);
+    color: var(--text-color-white);
     padding: var(--sp-1);
   }
 
@@ -665,25 +669,28 @@
   height: 100vh;
   position: fixed;
   top: 0; left: 0;
-  background-color: rgba(144, 148, 150, 0.8);
+  background-color: var(--bg-color);
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 100;
-  overflow-y: auto;
 }
 #btn-modal:checked ~ .container-modal{
   display: flex;
 }
 .content-modal{
-  width: 100%;
+  width: 50%;
   max-width: 400px;
+  max-height: 550px;
   padding: 20px;
-  background-color: #fff;
+  background-color: var(--bg-gradiente);
   border-radius: 4px;
+    overflow-y: auto;
+    
 }
 .content-modal h2{
   margin-bottom: 15px;
+  color: var(--text-color-white);
 }
 .content-modal p{
   padding: 15px 0px;

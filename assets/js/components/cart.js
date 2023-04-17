@@ -177,7 +177,7 @@ function cart(db, renderProducts, find, removeStock, discounts) {
     // validamos si la variable porcen tiene un numero diferente a 0, para mostrar contenido en el txt descuento y total
     if (porcen === 0) {
       txtDescuento.innerHTML = "0"
-      textTotal.innerHTML = showCount()
+      textTotal.innerHTML = showSubTotal()
     } else {
       showTotal(porcen)
     };
