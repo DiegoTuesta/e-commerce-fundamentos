@@ -1,17 +1,4 @@
-/*
-==============================
-  * CSS TABLE CONTENT *  
-==============================
-1. GOOGLE FONT
-2. VARIABLES CSS
-3. BASE
-4. REUSABLE CSS CLASSES
-5. HEADER & NAV
-6. BREAKPOINTS
-==============================
-  * END TABLE CONTENT *  
-==============================
-*/
+
 
 /*======= VARIABLES CSS ========*/
 :root {
@@ -301,6 +288,54 @@
     opacity: 1;
     visibility: visible;
   }
+
+  /*section filtrado*/
+
+  .select__main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    color: white;
+    font-size: 1.3em;
+    gap: 10px;
+    }
+
+  select{
+    background: transparent;
+    border: 1px solid #d05fec;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    width: 250px;
+    outline:none;
+    color: white;
+    font-size: .8em;
+    text-align: center;
+  }
+  select option{
+   color: white;
+   background: #492652  ;
+   font-size: .84em;
+  }
+
+  input{
+    background: transparent;
+    border: 1px solid #d05fec;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    width: 250px;
+    outline:none;
+    color: white;
+    font-size: .8em;
+    text-align: center;
+  }
+
+
+
+
   
   /* ====== Main ====== */
   /* Products */
@@ -392,7 +427,9 @@
     transition: background-color -3s ease-in-out,
                 color .3s ease-in-out;
   }
-  
+  .product__btn > i {
+    color: black;
+  }
   .product__btn:hover {
     background-color: var(--primary-color);
     color: var(--bg-color);
@@ -468,10 +505,11 @@
     max-width: 375px;
     width: 100%;
     height: calc(100vh - var(--header-height));
-    background-color: var(--bg-color);
+    background-color:rgb(34, 36, 59,.9);
     z-index: var(--z-fixed);
     transition: right .5s ease-in-out;
     overflow-y: auto;
+    color: white;
   }
   
   /* Show Cart */
@@ -496,6 +534,7 @@
   
   .cart__title {
     grid-column: span 2;
+    color: white;
   }
   
   .cart__btn.btn--close {
@@ -503,6 +542,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
   }
   
   .cart__body {
@@ -515,6 +555,10 @@
     align-items: center;
     gap: var(--sp-0-5);
     font-size: var(--normal-font);
+    color: white;
+  }
+  .cart__empty h2{
+    color: white;
   }
   
   .article {
@@ -524,7 +568,9 @@
     column-gap: var(--sp-1);
     margin-bottom: var(--sp-1);
   }
-  
+   button > i {
+    color: white;
+  }
   .article__image {
     position: relative;
     width: 80px;
@@ -550,6 +596,7 @@
   
   .article__title {
     grid-column: span 4;
+    color: white;
   }
   
   .article__quantity {
@@ -558,6 +605,10 @@
     align-items: center;
     gap: var(--sp-1);
     justify-self: center;
+    
+  }
+  .article__quantity button > i {
+    color: white;
   }
   
   .remove-from-cart {
@@ -572,7 +623,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     align-items: center;
-    background-color: var(--card-color);
+    background-color: rgb(34, 36, 59,.9);
     padding: var(--sp-1);
     row-gap: var(--sp-1);
   }
@@ -586,7 +637,16 @@
     grid-column: span 2;
     justify-self: flex-end;
   }
-  
+  .cart__total > button{
+    background: transparent;
+    border: 1px solid #d05fec;
+    font-size: 14px;
+    padding: 5px 10px;
+    outline:none;
+    color: white;
+    font-size: .8em;
+    text-align: center;
+  }
   .btn--buy {
     grid-column: span 4;
     background-color: var(--title-color);
@@ -595,6 +655,8 @@
   }
 
   /*:::Ventana Modal:::*/
+
+
 #btn-modal{
   display: none;
 }
@@ -695,6 +757,28 @@
   
     .cart {
       top: var(--header-height);
+    }
+  }
+
+  @media (min-width: 992px) {
+    select{
+      
+      padding: 2px;
+      width: 250px;
+     
+    }
+    select option{
+     color: white;
+     background: #492652  ;
+     font-size: .84em;
+    }
+  
+    input{
+     
+      height: 27px;
+      padding: 3px;
+      width: 250px;
+     
     }
   }
   
