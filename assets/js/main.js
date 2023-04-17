@@ -1,5 +1,5 @@
 
-import Menu from './components/Menu.js'
+import Menu from './components/menu.js'
 import loader from "./components/loader.js";
 import getProducts from "./helpers/getProducts.js";
 import Scroll from './components/Scroll.js';
