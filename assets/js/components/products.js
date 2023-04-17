@@ -8,6 +8,13 @@ function products() {
   // constante de elemento vacio para la creacion de input o select para el filtrado por nombre o categoria
   const elementFilter = document.querySelector('#filter--create');
 
+  // constante del contenidor principal para pintar los productos
+  const productsDOM = document.querySelector(".products__container");
+
+  // variable del container principal para pintar el modal
+  const modalDOM = document.querySelector(".modal__container")
+  
+
   // constante que representa la base de datos de productos y obtiene sus valores del localStorage
   const db = window.localStorage.getItem("products")
     ? JSON.parse(window.localStorage.getItem("products"))
@@ -15,7 +22,7 @@ function products() {
 
   // function para renderizar o crear el contenido de productos en el html 
   function renderProducts(ope = "all", str = "") {
-    const productsDOM = document.querySelector(".products__container");
+    
     let htmlProduct = "";
     if (ope === "all") {
       db.forEach((product) => {
@@ -24,12 +31,10 @@ function products() {
             data-aos-offset="300"
             data-aos-easing="ease-in-sine" >
               <div class="product__image" >
-             
-              
                 <img loading="lazy" src="${product.image}" alt="${product.name}">
               </div>
               <div class="caja__btn">
-              <button class="btn__1"><i class='bx bx-trash'></i>Detalles</button>
+                <button class="btn__1" data-id="${product.id}"><i class='bx bx-trash'></i><label for="btn-modal">Detail</label></button>
               </div>
               <div class="product__content">
                 <button type="button" class="product__btn add--to--cart" data-id="${product.id}">
@@ -53,8 +58,8 @@ function products() {
             <img loading="lazy" src="${product.image}" alt="${product.name}">
           </div>
           <div class="caja__btn">
-              <button class="btn__1"><i class='bx bx-trash'></i>Detalles</button>
-              </div>
+            <button class="btn__1" data-id="${product.id}"><i class='bx bx-trash'></i><label for="btn-modal">Detail</label></button>
+          </div>
           <div class="product__content">
             <button type="button" class="product__btn add--to--cart" data-id="${product.id}">
               <i class='bx bx-cart-add'></i>
@@ -78,8 +83,8 @@ function products() {
             <img loading="lazy" src="${product.image}" alt="${product.name}">
           </div>
           <div class="caja__btn">
-              <button class="btn__1"><i class='bx bx-trash'></i>Detalles</button>
-              </div>
+              <button class="btn__1" data-id="${product.id}"><i class='bx bx-trash'></i><label for="btn-modal">Detail</label></button>
+          </div>
           <div class="product__content">
             <button type="button" class="product__btn add--to--cart" data-id="${product.id}">
               <i class='bx bx-cart-add'></i>
@@ -190,6 +195,31 @@ function products() {
       }
     }
   })
+
+  productsDOM.addEventListener("click", function (e) {
+    let html = "";
+    if (e.target.closest(".btn__1")) {
+      const id = +e.target.closest(".btn__1").dataset.id;
+      const product = find(id)
+      html += `
+      <article class="product">
+        <div class="product__image">
+          <img loading="lazy" src="${product.image}" alt="${product.name}">
+        </div>
+        <div class="product__content">
+          <button type="button" class="product__btn add--to--cart--detail" data-id="${product.id}">
+            <i class='bx bx-cart-add'></i>
+          </button>
+          <span class="product__price">$${product.price}</span>
+          <span class="product__stock">Disponibles: ${product.quantity}</span>
+          <h3 class="product__title">${product.name}</h3>
+          <p class="product__title">${product.description}</p>
+        </div>
+      </article>
+      `;
+      modalDOM.innerHTML = html;
+    }
+  });
 
   
   // retornamos las functiones que queremos utilizar o pasar a otras funciones

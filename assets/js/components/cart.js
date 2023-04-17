@@ -35,6 +35,9 @@ function cart(db, renderProducts, find, removeStock, discounts) {
   // variable del elemento Txt descuento  en el carrito de compras
   const txtDescuento = document.querySelector('.descuento--total')
 
+  // variable del container principal para pintar el modal
+  const modalDOM = document.querySelector(".modal__container")
+
   // varibale que simula la obtencion de datos del localstorage
   let items = window.localStorage.getItem("cart")
     ? JSON.parse(window.localStorage.getItem("cart"))
@@ -47,7 +50,11 @@ function cart(db, renderProducts, find, removeStock, discounts) {
       if (verifyStock(id, quantity + cartItem.quantity)) {
         cartItem.quantity += quantity;
       } else {
-        window.alert("No tenemos suficiente stock!");
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops!',
+          text: 'No tenemos el stock requerido.',
+        })
       }
     } else {
       items.push({ id, quantity });
@@ -91,7 +98,7 @@ function cart(db, renderProducts, find, removeStock, discounts) {
     }
   }
 
-   //fucntion para obtener el subtotal sin contabilizar el descuento por si no lo hay
+  //fucntion para obtener el subtotal sin contabilizar el descuento por si no lo hay
   function showSubTotal() {
     const total = items.reduce((acc, item) => {
       const dbProduct = find(item.id);
@@ -109,11 +116,11 @@ function cart(db, renderProducts, find, removeStock, discounts) {
   function checkout() {
     removeStock(items);
     items = [];
-  }
+  }  
 
   // function para renderizar o crear los items del carrito de compras para su visualizacion en el html
   function renderCart() {
-    
+
     let html = "";
 
     if (items.length > 0) {
@@ -169,12 +176,12 @@ function cart(db, renderProducts, find, removeStock, discounts) {
 
     // validamos si la variable porcen tiene un numero diferente a 0, para mostrar contenido en el txt descuento y total
     if (porcen === 0) {
-      txtDescuento.innerHTML = "0" 
+      txtDescuento.innerHTML = "0"
       textTotal.innerHTML = showCount()
-    }else {
+    } else {
       showTotal(porcen)
     };
-    
+
     //validamos si el en array de carrito de comprar hay items para habiliar y deshabitar algunos elementos
     // del carrito
     if (items.length > 0) {
@@ -186,7 +193,7 @@ function cart(db, renderProducts, find, removeStock, discounts) {
       btnDescuento.setAttribute('disabled', 'disabled')
       inputDescuento.setAttribute('disabled', 'disabled')
     }
-    
+
     // reseteamos los valores valores de los array en el localStorage, tanto de productos y del cart
     window.localStorage.setItem("products", JSON.stringify(db));
     window.localStorage.setItem("cart", JSON.stringify(items));
@@ -201,8 +208,6 @@ function cart(db, renderProducts, find, removeStock, discounts) {
       if (product && product.quantity > 0) {
         addItemCart(id, 1);
         renderCart();
-      } else {
-        window.alert("Lo sentimos, no tenemos stock!");
       }
     }
   });
@@ -224,15 +229,41 @@ function cart(db, renderProducts, find, removeStock, discounts) {
 
     if (e.target.closest(".remove-from-cart")) {
       const id = +e.target.closest(".remove-from-cart").dataset.id;
-      removeItem(id);
-      renderCart();
+      Swal.fire({
+        title: 'Estas Segur@ de eliminar el item?',
+        text: "No podrá revertir!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si!',
+        cancelButtonText: 'No'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          removeItem(id);
+          renderCart();
+        }
+      })
     }
-    
   });
+
+  // evento click de agregar item del boton del modal
+  modalDOM.addEventListener('click', (e) => {
+    if (e.target.closest(".add--to--cart--detail")) {
+      const id = +e.target.closest(".add--to--cart--detail").dataset.id;
+      const product = find(id);
+      if (product && product.quantity > 0) {
+        addItemCart(id, 1);
+        renderCart();
+      }
+    }
+  })
+
+  
 
   // evento para verificar codigo de descuento y actualizar el total
   btnDescuento.addEventListener('click', () => {
-    const discount = discounts.find( cod => inputDescuento.value.toUpperCase() === cod.cod)
+    const discount = discounts.find(cod => inputDescuento.value.toUpperCase() === cod.cod)
     if (discount) {
       porcen = discount.por;
       showTotal(porcen);
@@ -246,13 +277,14 @@ function cart(db, renderProducts, find, removeStock, discounts) {
     renderProducts();
     porcen = 0;
     inputDescuento.value = ""
+
   })
 
 
-  
+
   // ejecutamos el carrito para la  creacion de array inicial de carritos
   renderCart();
-  
+ 
 }
 
 // exportamos la funcion cart para la ejecucion y llamado en otros archivos js
