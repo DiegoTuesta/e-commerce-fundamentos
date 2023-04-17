@@ -399,8 +399,8 @@
   
   /* ====== Footer ====== */
   .footer {
-    background-color: transparent;
-    color: white;
+    background:linear-gradient(1.2turn,#22243B 20%,#492652 80%) ;
+    box-shadow: 0 0 10px hsla(0, 100%, 99%, 0.4);
   }
   
   .footer__container,

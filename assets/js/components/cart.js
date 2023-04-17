@@ -132,7 +132,7 @@ function cart(db, renderProducts, find, removeStock, discounts) {
             <img src="${product.image}" alt="${product.name}">
           </div>
           <div class="caja__btn">
-              <button class="btn__1"><i class='bx bx-trash'></i>Detalles</button>
+              <button class="btn__1">detalles</button>
               </div>
           <div class="article__content">
             <h3 class="article__title">${product.name}</h3>
