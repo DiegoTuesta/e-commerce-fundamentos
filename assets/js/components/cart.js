@@ -35,6 +35,9 @@ function cart(db, renderProducts, find, removeStock, discounts) {
   // variable del elemento Txt descuento  en el carrito de compras
   const txtDescuento = document.querySelector('.descuento--total')
 
+  // variable del elemento Txt impuesto  en el carrito de compras
+  const txtImpuesto = document.querySelector('.impuestos--total')
+
   // variable del container principal para pintar el modal
   const modalDOM = document.querySelector(".modal__container")
 
@@ -91,10 +94,11 @@ function cart(db, renderProducts, find, removeStock, discounts) {
   //fucntion para obtener el procentaje de descuento y el total para para mostrar en sus respectivos elementos
   function showTotal(por) {
     if (por !== 0) {
-      const porcent = (showSubTotal() * por) / 100
-      const total = showSubTotal() - porcent;
-      txtDescuento.innerHTML = porcent;
-      textTotal.innerHTML = total
+      const porcent = (showSubTotal().total * por) / 100
+      const total = showSubTotal().total - porcent;
+      txtDescuento.innerHTML = "S/ " + porcent.toFixed(2);
+      txtImpuesto.innerHTML = "S/ " + ((total * 18) / 100)
+      textTotal.innerHTML = "S/ "+ (total + ((total * 18) / 100)).toFixed(2)
     }
   }
 
@@ -104,7 +108,8 @@ function cart(db, renderProducts, find, removeStock, discounts) {
       const dbProduct = find(item.id);
       return acc + dbProduct.price * item.quantity;
     }, 0);
-    return total;
+    const igv = (total * 18)/100;
+    return {total, igv};
   }
 
   // fucntion para verificar el stock si supera o no la cantidad
@@ -172,12 +177,15 @@ function cart(db, renderProducts, find, removeStock, discounts) {
     countDom.innerHTML = showCount();
 
     // concatenamos el contenido a mostrar en el txt subtotal en el footer del carrito de compras
-    subtotalDom.innerHTML = showSubTotal();
+    subtotalDom.innerHTML = "S/ " + showSubTotal().total.toFixed(2);
+    // concatenamos el contenido a mostrar en el txt subtotal en el footer del carrito de compras
+    
 
     // validamos si la variable porcen tiene un numero diferente a 0, para mostrar contenido en el txt descuento y total
     if (porcen === 0) {
-      txtDescuento.innerHTML = "0"
-      textTotal.innerHTML = showSubTotal()
+      txtDescuento.innerHTML = "S/ 0.00";
+      txtImpuesto.innerHTML = "S/ " + showSubTotal().igv.toFixed(2);
+      textTotal.innerHTML = "S/ " +(showSubTotal().total + showSubTotal().igv).toFixed(2);
     } else {
       showTotal(porcen)
     };

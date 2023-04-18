@@ -32,7 +32,7 @@
   <!-- Header  -->
   <header class="header ">
     <nav class="nav container">
-      <a href="/" class="nav__logo">
+      <a href="./" class="nav__logo">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" class="logo--icon">
           <path fill="currentColor"
                     d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
@@ -58,12 +58,15 @@
       </div>
 
       <div class="nav__buttons">
+        <button type="button" class="nav__btn btn--dark">
+          <i id="i--dark" class='bx bxs-sun'></i>
+        </button>
         <button type="button" class="nav__btn btn--cart">
           <i class='bx bx-shopping-bag'></i>
           <span class="notify">0</span>
         </button>
         <button type="button" class="nav__btn btn--menu">
-          <i class='bx bx-grid-alt'></i>
+          <i class='fa-solid fa-bars'></i>
         </button>
       </div>
     </nav>
@@ -107,23 +110,39 @@
           <span class="cart__count--item">0</span>
         </div>
         <div class="cart__total">
-          <span class="cart__total--text">Sub Total</span>
-          <span class="cart__total--item sub--total">$0</span>
+          <span class="cart__total--text"></span>
+          <span class="cart__total--item "></span>
         </div>
         <div class="cart__total">
           <span class="cart__total--text"></span>
-          <span class="cart__total--item"></span>
+          <span class="cart__total--item">Sub Total</span>
         </div>
         <div class="cart__total">
-          <span class="cart__total--text">Descuento</span>
+          <span class="cart__total--text"></span>
+          <span class="cart__total--item sub--total"></span>
+        </div>
+        <div class="cart__total">
+          <span class="cart__total--text"></span>
+          <span class="cart__total--item">Descuento</span>
+        </div>
+        <div class="cart__total">
+          <span class="cart__total--text"></span>
           <span class="cart__total--item descuento--total">0</span>
         </div>
         <div class="cart__total">
           <span class="cart__total--text"></span>
-          <span class="cart__total--item"></span>
+          <span class="cart__total--item">Impuestos</span>
         </div>
         <div class="cart__total">
-          <span class="cart__total--text">Total</span>
+          <span class="cart__total--text"></span>
+          <span class="cart__total--item impuestos--total">0</span>
+        </div>
+        <div class="cart__total">
+          <span class="cart__total--text"></span>
+          <span class="cart__total--item">Total</span>
+        </div>
+        <div class="cart__total">
+          <span class="cart__total--text"></span>
           <span class="cart__total--item total--total">0</span>
         </div>
         <button type="button" class="cart__btn btn--buy">Comprar</button>
@@ -147,10 +166,8 @@
   <!-- Footer  -->
   <footer class="footer section">
     <div class="footer__container container">
-      
-
       <div class="footer__bottom">
-        <p class="footer__text">derechos reservados Mario&COPY;Carbajal and Diego&COPY;Tuesta </p>
+        <p class="footer__text">Derechos reservados Mario&COPY;Carbajal and Diego&COPY;Tuesta </p>
       </div>
     </div>
   </footer>

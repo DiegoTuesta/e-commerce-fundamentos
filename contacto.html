@@ -12,13 +12,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <!-- fontawesome -->
   <script src="https://kit.fontawesome.com/459120fb19.js" crossorigin="anonymous"></script>
-
+   <!-- Boxicons  -->
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
  <link rel="stylesheet" href="assets/css/contacto.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- CSS  -->
  
   <!-- JS  -->
-  <script src="assets/js/main.js" type="module" ></script>
+  <script src="assets/js/main-contact.js" type="module" ></script>
 </head>
 <body>
   <!--loeader-->
@@ -28,42 +29,44 @@
     </div>
   </div>
 
-  <!-- Header  -->
-  <header class="header ">
-    <nav class="nav container">
-      <a href="/" class="nav__logo">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" class="logo--icon">
-          <path fill="currentColor"
-                    d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
-          </path>
-        </svg>        
-      </a>
-
-      <div class="nav__menu">
-        <button type="button" class="nav__btn btn--close">
-            <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
-        </button>
-        <ul class="nav__list">
-          <li class="nav__items">
-            <a href="./" class="nav__link">Inicio</a>
-          </li>
-          <li class="nav__items">
-            <a href="products.html" class="nav__link">Productos</a>
-          </li>
-          <li class="nav__items">
-            <a href="contato.html" class="nav__link">Contactos</a>
-          </li>
-        </ul>
-      </div>
-      <div class="nav__buttons">
-        <button type="button" class="nav__btn btn--menu">
-            <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
-        </button>
-      </div>
-    </nav>
-     
-    </nav>
-  </header>
+    <!-- Header  -->
+    <header class="header ">
+      <nav class="nav container">
+        <a href="./" class="nav__logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" class="logo--icon">
+            <path fill="currentColor"
+                      d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
+            </path>
+          </svg>        
+        </a>
+  
+        <div class="nav__menu">
+          <button type="button" class="nav__btn btn--close">
+            <i class='bx bx-x'></i>
+          </button>
+          <ul class="nav__list">
+            <li class="nav__items">
+              <a href="./" class="nav__link">Inicio</a>
+            </li>
+            <li class="nav__items">
+              <a href="products.html" class="nav__link">Productos</a>
+            </li>
+            <li class="nav__items">
+              <a href="contacto.html" class="nav__link">Contacto</a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="nav__buttons">
+          <button type="button" class="nav__btn btn--dark">
+            <i id="i--dark" class='bx bxs-sun'></i>
+          </button>
+          <button type="button" class="nav__btn btn--menu">
+            <i class='fa-solid fa-bars'></i>
+          </button>
+        </div>
+      </nav>
+    </header>
 
   <!-- Main  -->
  <main class="main__section">
@@ -92,13 +95,13 @@
             <img src="./assets/img/Diego.png" alt="foto de diego" loading="lazy">
         </div>
         <div class="section__datos">
-            <h2>Hello, my name is Diego, I am 28 years old, I live in Peru, Lima-Ate-huaycan, and I have worked laying out the project and giving style and logic together with my partner.</h2>
+            <h2>Hello, my name is Diego, I am 24 years old, I live in Iquitos, Peru. I have worked laying out the project and giving style and logic together with my partner.</h2>
         </div>
         <div class="section__icon">
-            <a class="ancor" href="#" target="_blank">
+            <a class="ancor" href="https://github.com/DiegoTuesta" target="_blank">
                 <i class="fa-brands fa-github" "></i>
             </a>
-            <a class="ancor" href="#" target="_blank">
+            <a class="ancor" href="https://www.linkedin.com/in/diego-andres-tuesta-perez" target="_blank">
                 <i class="fa-brands fa-linkedin-in"></i>
             </a>
         </div>
@@ -115,7 +118,7 @@
   <footer class="footer section">
     <div class="footer__container container">
       <div class="footer__bottom">
-        <p class="footer__text">derechos reservados Mario&COPY;Carbajal and Diego&COPY;Tuesta </p>
+        <p class="footer__text">Derechos reservados Mario&COPY;Carbajal and Diego&COPY;Tuesta </p>
       </div>
     </div>
   </footer> 

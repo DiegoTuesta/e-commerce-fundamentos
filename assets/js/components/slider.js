@@ -6,7 +6,7 @@ function slider() {
     images.forEach(item => {
         html += `
         <swiper-slide>
-            <img src="${item.image}" />
+            <img loading="lazy" src="${item.image}" />
         </swiper-slide>
         `
     });
