@@ -11,8 +11,8 @@ loader();
 Menu();
 showCart();
 Scroll();
-const {db, renderProducts, find, removeStock} = products()
-renderProducts()
+const {db, renderProducts, find, removeStock} = products();
+renderProducts();
 //const {addItemDetail} = cart(db, renderProducts, find, removeStock, discounts);
-cart(db, renderProducts, find, removeStock, discounts)
+cart(db, renderProducts, find, removeStock, discounts);
 
