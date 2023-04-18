@@ -13,6 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   
   <!-- Boxicons  -->
+   <!-- Boxicons  -->
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://kit.fontawesome.com/459120fb19.js" crossorigin="anonymous"></script>
   <!-- CSS  -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -23,11 +25,11 @@
 </head>
 <body>
   <!-- Loader -->
-  <div class="loader">
+  <!-- <div class="loader">
     <div class="loader__container">
       <span></span>
     </div>
-  </div>
+  </div> -->
 
   <!-- Header  -->
   <header class="header">
@@ -39,9 +41,7 @@
           </path>
         </svg>        
       </a>
-
       <div class="nav__menu">
-        
         <ul class="nav__list">
           <li class="nav__items">
             <a href="./" class="nav__link">Inicio</a>
@@ -50,85 +50,52 @@
             <a href="products.html" class="nav__link">Productos</a>
           </li>
           <li class="nav__items">
-            <a href="contacto.html" class="nav__link">Contactos</a>
+            <a href="contacto.html" class="nav__link">Contacto</a>
           </li>
         </ul>
       </div>
-
       <div class="nav__buttons">
-       
+        <button type="button" class="nav__btn btn--dark">
+          <i id="i--dark" class='bx bxs-sun'></i>
+        </button>
         <button type="button" class="nav__btn btn--menu">
-          <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+          <i class="fa-solid fa-bars" ></i>
         </button>
       </div>
     </nav>
   </header>
 
   <!-- Main  -->
-
-
   <main class="main1">
-
     <div class="main__descri">
-
       <h4>Obten el mejor etilo</h4>
-
       <h2>Academlo & Style</h2>
-
-
       <h4>Sweater de tejido fino</h4>
-
     </div>
     <div class="main__foto">
-
       <img class="foto" src="assets/img/chon2.png" alt="ropa de acdemlo"  loading="lazy">
     </div>
     <div class="main__buton">
       <a href="products.html">Compra ya!</a>
     </div>
-
-
-
-
   </main>
 
+  <!-- Slider pequeño de imagenes -->
   <div class="bodyt">
-
-  
     <swiper-container id="slider" class="mySwiper" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"
     slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
     coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true">
-   
-  
-  </swiper-container>
-
+    </swiper-container>
   </div>
 
-
-
-
-
-
-  <!-- Footer  -->
-  <footer class="footer section">
+   <!-- Footer  -->
+   <footer class="footer section">
     <div class="footer__container container">
-      <div class="footer__top">
-        <div class="footer__left">
-          <h3 class="footer__title">Sobre Nosotros</h3>
-          <p class="footer__text">
-            My team Diego Tuesta and Mario Carvajal, We both worked on the aesthetic development and the logic of the cart,</p>
-        </div>
-       
-      </div>
-
       <div class="footer__bottom">
-        <p class="footer__text"> derechos reservados <span>Mario&COPY;Carbajal</span> and  <span>Diego&COPY;Tuesta</span></p>
+        <p class="footer__text">Derechos reservados Mario&COPY;Carbajal and Diego&COPY;Tuesta </p>
       </div>
     </div>
-  </footer>
-
-
-
+  </footer> 
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 </body>
