@@ -43,12 +43,13 @@
   
   @media (prefers-color-scheme: dark) {
     :root.light{
-      --primary-color: hsl(239, 100%, 51%);
-      --body-color: hsl(0, 17%, 92%);
-      --text-color: rgba(0,0,0,90%);
-      --title-color: rgba(0,0,0,95%);
-      --nav-color: #fff;
-      --bg-color: hsl(354, 70%, 82%);;
+      --primary-color: #CF1A4F;
+      --body-color: linear-gradient(0.70turn, #653ff1  20%,#4fdcf5 80%) ;
+      --text-color: rgb(0, 0, 0);
+      --title-color: rgb(0, 0, 0);
+      --nav-color: linear-gradient(0.70turn,  #4fdcf5  20%,#653ff1 80%) ;
+      --bg-color: rgb(101, 63, 241,.99) ;
+    
     }
    }
   @media screen and (min-width: 992px) {
