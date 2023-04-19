@@ -50,16 +50,16 @@
 
  @media (prefers-color-scheme: dark) {
   :root.light{
-    --primary-color: #CF1A4F;
+    /* --primary-color: rgb(63, 63, 31); */
     --body-color: linear-gradient(0.70turn, #653ff1  20%,#4fdcf5 80%) ;
     --text-color: rgb(0, 0, 0);
     --title-color: rgb(0, 0, 0);
     --nav-color: linear-gradient(0.70turn,  #4fdcf5  20%,#653ff1 80%) ;
     --select-bg-color:  #653ff1 ;
-    --bg-color:  rgb(101, 63, 241,.55) ;
+    --bg-color:  #4fdcf5 ;
     --bg-btn-color:rgb(92, 253, 60);
     --modal-bg-color: #653ff1 ;
-    --cart-bg-color: rgb(101, 63, 241,.99);
+    --cart-bg-color: #4fdcf5;
     --product-bg-image: rgba(0, 0, 0, 0.54); 
   }
  }
@@ -291,7 +291,7 @@
     height: 20px;
     background-color: var(--primary-color);
     font-size: var(--tiny-font);
-    color: var(--bg-color);
+    color: var(--title-color);
     display: flex;
     justify-content: center;
     align-items: center;

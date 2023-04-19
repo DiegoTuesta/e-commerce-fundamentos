@@ -45,12 +45,12 @@
 
   @media (prefers-color-scheme: dark) {
     :root.light{
-      --primary-color: #CF1A4F;
+      /* --primary-color: #CF1A4F; */
       --body-color: linear-gradient(0.70turn, #653ff1  20%,#4fdcf5 80%) ;
       --text-color: rgb(0, 0, 0);
       --title-color: rgba(0,0,0,95%);
       --nav-color: linear-gradient(0.70turn,  #4fdcf5  20%,#653ff1 80%) ;
-      --bg-color: rgb(101, 63, 241,.99) ;
+      --bg-color:  #4fdcf5 ;
     }
    }
   
@@ -185,7 +185,7 @@
     left: 0;
     width: 100%;
     background: var(--nav-color);
-    z-index: var(--z-fixed);
+    z-index: var(--z-modal);
     box-shadow: 0 0 10px hsla(254, 23%, 89%, 0.5);
     transition: background 0.5s ease-in-out;
   }
@@ -346,14 +346,8 @@
       
   .bodyt{
     width: 90%; 
-  }
-  
-  .bodyt {
     position: relative;
-    z-index: 50;
-  }
-  
-  .bodyt {
+    z-index: 1;
     background: transparent;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     color: var(--bg-color);
@@ -361,6 +355,7 @@
     padding: 0;
     height: 50%;
   }
+ 
   
   swiper-container {
     width: 95%;
