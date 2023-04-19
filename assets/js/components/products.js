@@ -34,7 +34,7 @@ function products() {
                 <img loading="lazy" src="${product.image}" alt="${product.name}">
               </div>
               <div class="caja__btn">
-                <button class="btn__1" data-id="${product.id}"><i class='bx bx-trash'></i><label for="btn-modal">Detail</label></button>
+                <button class="btn__1" data-id="${product.id}"><i class='bx bxs-detail'></i><label for="btn-modal">Detail</label></button>
               </div>
               <div class="product__content">
                 <button type="button" class="product__btn add--to--cart" data-id="${product.id}">
@@ -58,7 +58,7 @@ function products() {
             <img loading="lazy" src="${product.image}" alt="${product.name}">
           </div>
           <div class="caja__btn">
-            <button class="btn__1" data-id="${product.id}"><i class='bx bx-trash'></i><label for="btn-modal">Detail</label></button>
+            <button class="btn__1" data-id="${product.id}"><i class='bx bxs-detail'></i><label for="btn-modal">Detail</label></button>
           </div>
           <div class="product__content">
             <button type="button" class="product__btn add--to--cart" data-id="${product.id}">
@@ -83,7 +83,7 @@ function products() {
             <img loading="lazy" src="${product.image}" alt="${product.name}">
           </div>
           <div class="caja__btn">
-              <button class="btn__1" data-id="${product.id}"><i class='bx bx-trash'></i><label for="btn-modal">Detail</label></button>
+              <button class="btn__1" data-id="${product.id}"><i class='bx bxs-detail'></i><label for="btn-modal">Detail</label></button>
           </div>
           <div class="product__content">
             <button type="button" class="product__btn add--to--cart" data-id="${product.id}">
