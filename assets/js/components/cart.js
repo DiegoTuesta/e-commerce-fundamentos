@@ -280,6 +280,11 @@ function cart(db, renderProducts, find, removeStock, discounts) {
 
   // evento para realizar la comprar en el carrito de compras
   checkoutDom.addEventListener('click', function () {
+    Swal.fire(
+      'Compra realizada!',
+      'Gracias por confiar en nosotros!',
+      'success'
+    );
     checkout();
     renderCart();
     renderProducts();
